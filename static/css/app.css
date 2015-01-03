@@ -187,3 +187,15 @@ body {
     color: #333;
     transition: all 0.2s ease;
 }
+
+
+/* --------- Responsive fixes --------- */
+@media (min-width: 768px) and (max-width: 979px) {
+    
+}
+@media (max-width: 767px) {
+    
+}
+@media (max-width: 480px) {
+    
+}

@@ -17,3 +17,5 @@ $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 
 // set data for view
 $dataArr["website"]["title"] = WEBSITE_TITLE;
+$dataArr["website"]["description"] = 'Calculate aspect ratio online for images, display screens, montors and mobile easily';
+$dataArr["website"]["keywords"] = 'calculate aspect ratio, calculate aspect ratio online, easily calculate aspect ratio, width height ratio';

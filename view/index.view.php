@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 border-b-l-0 border-b-none text-shadow-none" style="padding-right: 68px;"></span>
-                                    <input type="range" id="ratio_width_range" class="form-control border-t-r-0 border-b-r-0 border-b-none" min="0" max="5000" data-toggle="tooltip" data-placement="bottom" title="Adjust width"/>
+                                    <input type="range" id="ratio_width_range" class="form-control border-t-r-0 border-b-r-0 border-b-none" min="1" max="5000" data-toggle="tooltip" data-placement="bottom" title="Adjust width"/>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 border-b-l-0 text-shadow-none border-b-none" style="padding-right: 28px;">Height</span>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 border-b-l-0 text-shadow-none border-b-none" style="padding-right: 68px;"></span>
-                                    <input type="range" id="ratio_height_range" class="form-control border-t-r-0 border-b-r-0 border-b-none" min="0" max="5000" data-toggle="tooltip" data-placement="bottom" title="Adjust height"/>
+                                    <input type="range" id="ratio_height_range" class="form-control border-t-r-0 border-b-r-0 border-b-none" min="1" max="5000" data-toggle="tooltip" data-placement="bottom" title="Adjust height"/>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 text-shadow-none" style="padding-right: 35px;" data-toggle="tooltip" data-placement="bottom" title="Calculated ratio for above width and height">Ratio</span>

@@ -5,11 +5,13 @@ var app = {
     ratioList: [],
     
     setRatio: function(i) {
+        app.ratioList = JSON.parse(storage.get('ratioList'));
+        app.ratio = {};
         app.ratio = app.ratioList[i];
         app.ratio.i = i;
         app.ratio.constrain = true;
-        app.ratio.dataWidth = app.ratio.width;
-        app.ratio.dataHeight = app.ratio.height;
+        app.ratio.dataWidth = app.ratioList[i].width;
+        app.ratio.dataHeight = app.ratioList[i].height;
     },
     
     addRatioListModal: function() {
@@ -62,7 +64,6 @@ var app = {
         app.ratio.width = app.ratio.dataWidth / r;
         app.ratio.height = app.ratio.dataHeight / r;
         app.setCalculationElementsValue();
-        //app.selectRatioListItem(app.ratio.i);
     },
     
     gcd: function(a, b) {
@@ -93,10 +94,16 @@ var app = {
         console.log(app.ratioList);
         if(app.ratioList === '' || app.ratioList === null) {
             app.ratioList =[
-                { width: 1, height: 1, name: 'Standard' },
-                { width: 4, height: 3, name: 'Standard' },
-                { width: 16, height: 9, name: 'Widescreen' }
+                { width: 1, height: 1, name: "Standard" },
+                { width: 4, height: 3, name: "Standard" },
+                { width: 16, height: 9, name: "Widescreen" }
             ];
+            var userScreen = {};
+            var r = app.gcd(window.screen.width, window.screen.height);
+            userScreen.width = window.screen.width / r;
+            userScreen.height = window.screen.height / r;
+            userScreen.name = "Your Screen";
+            //app.ratioList.push(userScreen);
             storage.set('ratioList', JSON.stringify(app.ratioList));
         }
         
@@ -118,13 +125,19 @@ var app = {
                 app.ratio.constrain = false;
             }
         });
-        $('#ratio_width, #ratio_width_range').on('change blur keyup keydown mouseclick', function() {
-            app.ratio.dataWidth = $(this).val();
-            app.recalculate('width');
+        $('#ratio_width, #ratio_width_range').on('change', function() {
+            var width = parseInt($(this).val());
+            if(width > 0) {
+                app.ratio.dataWidth = width;
+                app.recalculate('width');
+            }
         });
-        $('#ratio_height, #ratio_height_range').on('change blur keyup keydown mouseclick', function() {
-            app.ratio.dataHeight = $(this).val();
-            app.recalculate('height');
+        $('#ratio_height, #ratio_height_range').on('change', function() {
+            var height = parseInt($(this).val());
+            if(height > 0) {
+                app.ratio.dataHeight = height;
+                app.recalculate('height');
+            }
         });
         
         $('[data-toggle="tooltip"]').tooltip();
