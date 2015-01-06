@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-b-l-0 border-b-none text-shadow-none" style="padding-right: 32px;">Width</span>
-                                    <input type="number" id="ratio_width" class="form-control border-b-r-0 border-b-none" />
+                                    <input type="text" id="ratio_width" class="form-control border-b-r-0 border-b-none" />
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 border-b-l-0 border-b-none text-shadow-none" style="padding-right: 68px;"></span>
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 border-b-l-0 text-shadow-none border-b-none" style="padding-right: 28px;">Height</span>
-                                    <input type="number" id="ratio_height" class="form-control border-t-r-0 border-b-r-0 border-b-none"/>
+                                    <input type="text" id="ratio_height" class="form-control border-t-r-0 border-b-r-0 border-b-none"/>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon border-t-l-0 border-b-l-0 text-shadow-none border-b-none" style="padding-right: 68px;"></span>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="row mt20">
-                            <div id="preview" style="margin: 0px auto; display: none;">
+                            <div id="preview" style="margin: 0px auto;">
                                 <p class="text-shadow-none pt10">Preview</p>
                             </div>
                         </div>

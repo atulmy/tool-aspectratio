@@ -82,7 +82,7 @@ var app = {
         $('#ratio_height_range').val(app.ratio.dataHeight);
         var ratioText = app.ratio.width+':'+app.ratio.height;
         $('#ratio_ratio').val(ratioText);
-        $('#preview').height(app.ratio.height * 10).width(app.ratio.width * 10);
+        $('#preview').height((100 * app.ratio.dataHeight) / app.ratio.dataWidth);
         $('#preview p').html(ratioText);
         
         $('.ratio_list').removeClass('active');
@@ -125,14 +125,28 @@ var app = {
                 app.ratio.constrain = false;
             }
         });
-        $('#ratio_width, #ratio_width_range').on('change', function() {
+        $('#ratio_width').on('keyup', function() {
             var width = parseInt($(this).val());
             if(width > 0) {
                 app.ratio.dataWidth = width;
                 app.recalculate('width');
             }
         });
-        $('#ratio_height, #ratio_height_range').on('change', function() {
+        $('#ratio_width_range').on('change', function() {
+            var width = parseInt($(this).val());
+            if(width > 0) {
+                app.ratio.dataWidth = width;
+                app.recalculate('width');
+            }
+        });
+        $('#ratio_height').on('keyup', function() {
+            var height = parseInt($(this).val());
+            if(height > 0) {
+                app.ratio.dataHeight = height;
+                app.recalculate('height');
+            }
+        });
+        $('#ratio_height_range').on('change', function() {
             var height = parseInt($(this).val());
             if(height > 0) {
                 app.ratio.dataHeight = height;
